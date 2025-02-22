@@ -4,6 +4,40 @@
 
 The Supply Chain Analytics Dashboard is a comprehensive tool designed to help users manage and analyze procurement activities efficiently. It provides insights into procurement trends, anomalies, and detailed data analysis, making it an invaluable resource for procurement managers and analysts.
 
+### Design Rationale
+
+**Usability**: The dashboard is designed with a user-centric approach, ensuring that even non-experts can navigate and utilize its features effectively. The interface is clean and intuitive, with a logical layout that guides users through their tasks. Interactive elements like charts and tables are designed to be engaging and informative, allowing users to explore data with minimal effort.
+
+**Scalability**: The architecture of the dashboard is built to handle increasing data volumes and user demands. By leveraging efficient state management and API response caching techniques, the system can accommodate large datasets without compromising performance. The modular design allows for easy integration of new features and data sources, ensuring that the dashboard can evolve with changing business needs.
+
+**Data Complexity**: The dashboard presents complex procurement data in a simplified manner, using charts and filters to highlight key insights. Pivot tables and dynamic charts allow users to drill down into specific data points, uncovering patterns and anomalies without being overwhelmed.
+
+### Scalability Considerations
+
+To ensure the dashboard remains responsive and usable as it scales, several strategies are employed:
+
+- The use of asynchronous data fetching and caching mechanisms minimizes load times and reduces server strain. This ensures that even as data volumes grow, the dashboard remains fast and responsive.
+
+- The component-based architecture allows for easy updates and feature additions. New data sources or analytical tools can be integrated without disrupting existing functionality, providing flexibility to adapt to future needs.
+
+- Techniques such as code splitting used to optimize performance, ensuring that only necessary components are loaded at any given time. This reduces initial load times and enhances the user experience.
+
+### Visual Design and Accessibility
+
+The prototype is designed with a cohesive visual identity, using a consistent color palette and typography to create a unified look and feel. High contrast colors and readable fonts are employed to enhance visibility. CSS variables are used to define primary, secondary, and background colors, allowing for easy customization and ensuring that the design remains accessible to users with visual impairments. The layout is responsive, adapting to different screen sizes and devices, ensuring that the dashboard is accessible to all users, regardless of their device or environment.
+
+## Home Dashboard
+
+![Home dashboard](image.png)
+
+## Anomalies
+
+![Anomalies](image-1.png)
+
+## Data Insights
+
+![Data Insights](image-2.png)
+
 ## Tech Stack
 
 - ReactJS
@@ -18,7 +52,7 @@ The Supply Chain Analytics Dashboard is a comprehensive tool designed to help us
 - **Dashboard Setup**: Customize the dashboard with filters and dimensions.
 - **Procurement Data Management**: Add, view, and analyze procurement data.
 
-## User Guide
+## User Flow
 
 ### 1. Logging In
 
@@ -84,39 +118,6 @@ The Supply Chain Analytics Dashboard is a comprehensive tool designed to help us
    ```bash
    npm start
    ```
-
-4. **Build for Production**:
-
-   ```bash
-   npm run build
-   ```
-
-### Deployment on GitHub Pages
-
-1. **Install `gh-pages`**:
-
-   ```bash
-   npm install gh-pages --save-dev
-   ```
-
-2. **Add Deployment Scripts**: Add the following scripts to your `package.json`:
-
-   ```json
-   "scripts": {
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
-   }
-   ```
-
-3. **Deploy**:
-
-   ```bash
-   npm run deploy
-   ```
-
-4. **Access the Dashboard**: The application will be available at `https://nikhilkalburgi.github.io/supply-chain-dashboard`.
-
-By following these steps, you can set up and deploy the Supply Chain Analytics Dashboard, providing users with a powerful tool for managing and analyzing procurement activities. Adjust the configuration and styling as needed to fit your specific requirements.
 
 ### Structure of the Example Data
 

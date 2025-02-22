@@ -61,12 +61,11 @@ header {
 .action-buttons {
   position: absolute;
   bottom: 15px;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 8px 12px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -75,8 +74,10 @@ header {
 }
 
 .action-buttons button {
-  width: 95%;
+  width: 85%;
   padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul {
@@ -91,6 +92,11 @@ nav ul > li {
   padding: 20px;
 }
 
+nav ul > li div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 nav a {
   color: #8d8d8d;
   text-decoration: none;
@@ -102,7 +108,7 @@ nav a {
   letter-spacing: 1px;
 }
 
-nav a.active {
+nav a.customActive {
   color: #fff;
 }
 
@@ -173,5 +179,21 @@ select:focus, input:focus {
   }
   .action-buttons button {
     width: 45%;
+  }
+}
+
+nav a svg {
+  width: 16px;
+}
+
+@media all and (max-width: 1400px) {
+  nav a div:last-child {
+    display: none;
+  }
+  nav a {
+    display: block;
+  }
+  nav a svg {
+    width: 25px;
   }
 }

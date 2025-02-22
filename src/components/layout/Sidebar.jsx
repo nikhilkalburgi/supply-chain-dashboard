@@ -148,11 +148,11 @@ export const Sidebar = ({ anomaliesFilters, dataInsightsFilters, DashboardHomeFi
 
   const renderFilters = () => {
     switch (window.location.pathname) {
-      case '/anomalies':
+      case '/supply-chain-dashboard/anomalies':
         return <AnomaliesFilters {...anomaliesFilters} />;
-      case '/data-insights':
+      case '/supply-chain-dashboard/data-insights':
         return <DataInsightsFilters {...dataInsightsFilters} />;
-      case '/':
+      case '/supply-chain-dashboard':
         return <DashboardHomeFilters />;
       default:
         return null;

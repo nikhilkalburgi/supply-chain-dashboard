@@ -6,9 +6,9 @@ import DataInsights from '../components/dashboard/DataInsights';
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<DashboardHome />} />
-    <Route path="/anomalies" element={<Anomalies />} />
-    <Route path="/data-insights" element={<DataInsights />} />
+    <Route path="/supply-chain-dashboard" element={<DashboardHome />} />
+    <Route path="/supply-chain-dashboard/anomalies" element={<Anomalies />} />
+    <Route path="/supply-chain-dashboard/data-insights" element={<DataInsights />} />
   </Routes>
 );
 
