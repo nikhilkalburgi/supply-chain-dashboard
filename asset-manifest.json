@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/supply-chain-dashboard/static/css/main.7af28b84.css",
-    "main.js": "/supply-chain-dashboard/static/js/main.3b2907eb.js",
+    "main.js": "/supply-chain-dashboard/static/js/main.9885e3b7.js",
     "index.html": "/supply-chain-dashboard/index.html",
     "main.7af28b84.css.map": "/supply-chain-dashboard/static/css/main.7af28b84.css.map",
-    "main.3b2907eb.js.map": "/supply-chain-dashboard/static/js/main.3b2907eb.js.map"
+    "main.9885e3b7.js.map": "/supply-chain-dashboard/static/js/main.9885e3b7.js.map"
   },
   "entrypoints": [
     "static/css/main.7af28b84.css",
-    "static/js/main.3b2907eb.js"
+    "static/js/main.9885e3b7.js"
   ]
 }
