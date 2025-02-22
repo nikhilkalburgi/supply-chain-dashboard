@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.7af28b84.css",
-    "main.js": "/static/js/main.91d61e2a.js",
-    "index.html": "/index.html",
-    "main.7af28b84.css.map": "/static/css/main.7af28b84.css.map",
-    "main.91d61e2a.js.map": "/static/js/main.91d61e2a.js.map"
+    "main.css": "/nikhilkalburgi/supply-chain-dashboard/static/css/main.7af28b84.css",
+    "main.js": "/nikhilkalburgi/supply-chain-dashboard/static/js/main.3b2907eb.js",
+    "index.html": "/nikhilkalburgi/supply-chain-dashboard/index.html",
+    "main.7af28b84.css.map": "/nikhilkalburgi/supply-chain-dashboard/static/css/main.7af28b84.css.map",
+    "main.3b2907eb.js.map": "/nikhilkalburgi/supply-chain-dashboard/static/js/main.3b2907eb.js.map"
   },
   "entrypoints": [
     "static/css/main.7af28b84.css",
-    "static/js/main.91d61e2a.js"
+    "static/js/main.3b2907eb.js"
   ]
 }
