@@ -54,6 +54,8 @@ The prototype is designed with a cohesive visual identity, using a consistent co
 
 ## User Flow
 
+![user flow diagram](image-3.png)
+
 ### 1. Logging In
 
 - **Access the Login Page**: Users start by entering their credentials on the login page. Use `admin` as username and `password` as password.
