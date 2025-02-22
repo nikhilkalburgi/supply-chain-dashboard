@@ -1,0 +1,45 @@
+.pivot-table-container {
+  margin: 20px;
+  white-space: nowrap;
+}
+
+.pivot-controls {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: end;
+}
+.pivot-controls select {
+  padding: 5px 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.pivot-controls label {
+  margin-right: 20px;
+  margin-top: -20px;
+}
+
+.pivot-table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.pivot-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pivot-table th, .pivot-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.pivot-table th {
+  background-color: var(--bg-secondary-color);
+}
+
+.pivot-table tr:hover {
+  background-color: #f9f9f9;
+}

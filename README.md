@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Supply Chain Analytics Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Supply Chain Analytics Dashboard is a comprehensive tool designed to help users manage and analyze procurement activities efficiently. It provides insights into procurement trends, anomalies, and detailed data analysis, making it an invaluable resource for procurement managers and analysts.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- ReactJS
+- Tanstack/react-query
+- React-Router-Dom
+- Chart.JS
+- API is simulated
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Authentication**: Secure login to access the dashboard.
+- **Dashboard Setup**: Customize the dashboard with filters and dimensions.
+- **Procurement Data Management**: Add, view, and analyze procurement data.
 
-### `npm test`
+## User Guide
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Logging In
 
-### `npm run build`
+- **Access the Login Page**: Users start by entering their credentials on the login page. Use `admin` as username and `password` as password.
+- **Authentication**: Upon successful login, users are redirected to the main dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Setting Up the Dashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Navigation**: Use the navbar to navigate between different sections: Dashboard Home, Anomalies, Data Insights.
+- **Filters**: Each section has specific filters accessible via the sidebar. Users can filter data by date range, region, supplier, and amount(Depends on the example data)
+- **Select Dimension**: In the Data Insights section, users can choose to view data aggregated by region or supplier.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Adding Procurement Data
 
-### `npm run eject`
+- **Data Entry**: Users can add new procurement activities through a form, specifying details like supplier, region, amount, and date. This can be improved to importing the csv file as well.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Analyzing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Trends and Anomalies**: Use interactive charts to identify trends and anomalies in procurement data.
+- **Detailed Insights**: Drill down into specific data points for a more detailed analysis.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Design Choices
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Usability
 
-## Learn More
+- **Intuitive Interface**: The dashboard is designed with non-experts in mind, featuring a clean layout and easy navigation.
+- **Interactive Elements**: Charts and tables are interactive, allowing users to click and explore data points.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Scalability
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Data Handling**: The system efficiently handles increasing data volumes with caching and efficient state management.
+- **User Management**: It can support multiple users with role-based access, ensuring scalability as the user base grows.
 
-### Code Splitting
+### Data Complexity
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Insights Presentation**: Data is presented using pivot tables and filters, allowing users to explore complex datasets without being overwhelmed.
+- **Visual Cues**: Use of charts and color coding to highlight key insights and anomalies.
 
-### Analyzing the Bundle Size
+## Accessibility
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **High Contrast and Readability**: The dashboard uses high contrast colors and readable fonts.
+- **Color Variables**: Primary, secondary, and background colors are defined using CSS variables to ensure consistency and accessibility.
 
-### Making a Progressive Web App
+## Installation and Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation Steps
 
-### Advanced Configuration
+1. **Clone the Repository**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   git clone https://github.com/nikhilkalburgi/supply-chain-dashboard.git
+   cd supply-chain-dashboard
+   ```
 
-### Deployment
+2. **Install Dependencies**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm install
+   ```
 
-### `npm run build` fails to minify
+3. **Run the Application**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   npm start
+   ```
+
+4. **Build for Production**:
+
+   ```bash
+   npm run build
+   ```
+
+### Deployment on GitHub Pages
+
+1. **Install `gh-pages`**:
+
+   ```bash
+   npm install gh-pages --save-dev
+   ```
+
+2. **Add Deployment Scripts**: Add the following scripts to your `package.json`:
+
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+3. **Deploy**:
+
+   ```bash
+   npm run deploy
+   ```
+
+4. **Access the Dashboard**: The application will be available at `https://nikhilkalburgi.github.io/supply-chain-dashboard`.
+
+By following these steps, you can set up and deploy the Supply Chain Analytics Dashboard, providing users with a powerful tool for managing and analyzing procurement activities. Adjust the configuration and styling as needed to fit your specific requirements.
+
+### Structure of the Example Data
+
+The structure of the data is very simple but can expand based on needs. As of now, it has 4 fields:
+
+1. Date
+2. Supplier
+3. Region
+4. Amount

@@ -1,0 +1,50 @@
+.controls {
+    margin-bottom: 20px;
+}
+  
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  flex-direction: column;
+}
+
+.insights-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.insights-table th,
+.insights-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.insights-table th {
+  background-color: var(--bg-secondary-color);
+  font-weight: bold;
+}
+.dataInsightsFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dataInsightsFilters input {
+  width: 95%;
+  padding: 8px 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-block: 5px;
+}
+.dataInsightsFilters p {
+  margin: 10px 0px;
+}
+.dataInsightsFilters select {
+  width: 100%;
+  padding: 8px 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
