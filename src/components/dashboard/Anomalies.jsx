@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo, useState, useEffect } from 'react';
 import ChartContainer from '../common/ChartContainer';
@@ -6,6 +7,7 @@ import './Anomalies.css';
 import { Sidebar } from '../layout/Sidebar';
 import Loader from '../common/Loader';
 import PivotTable from '../common/DataTable';
+import ErrorMessage from '../common/Error';
 
 const Anomalies = () => {
   const defaultFilters = {
@@ -14,9 +16,16 @@ const Anomalies = () => {
     supplier: 'All',
     amountRange: { min: '', max: '' }
   };
-
+  
   const [filters, setFilters] = useState(defaultFilters);
   const { state, dispatch } = useDashboardContext();
+  const [show, setShow] = useState(0);
+
+  useEffect(() => {
+    if(show === 1) {
+      setShow(2);
+    }
+  }, [state])
 
   const updateFilters = (newFilters) => {
     setFilters(prev => ({ ...prev, ...newFilters }));
@@ -35,6 +44,8 @@ const Anomalies = () => {
   // Fetch data based on filters
   useEffect(() => {
     dispatch({ type: "FETCH_DATA", payload: filters });
+    if(show === 0)
+      setShow(1);
   }, [filters, dispatch]);
 
   const filteredAnomalies = useMemo(() => {
@@ -64,7 +75,7 @@ const Anomalies = () => {
 
   return (
     <>
-      {state.isLoading ? <Loader /> : state.error ? <>Error</> : 
+      {state.isLoading || show !== 2 ? <Loader /> : state.error ? <ErrorMessage message={'Service Unavailable!'} /> : 
        <div>
         <h2>Anomalies</h2>
         <Sidebar

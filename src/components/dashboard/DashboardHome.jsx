@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useMemo } from 'react';
 import { useDashboardContext } from '../../context/DashboardContext';
 import ChartContainer from '../common/ChartContainer';
 import './DashboardHome.css'; 
 import Loader from '../common/Loader';
+import ErrorMessage from '../common/Error';
 
 const DashboardHome = () => {
   const { state } = useDashboardContext();
@@ -55,7 +57,7 @@ const DashboardHome = () => {
 
   return (
     <>
-      {state.isLoading ? <Loader /> : state.error ? <>Error</> : 
+      {state.isLoading ? <Loader /> : state.error ? <ErrorMessage message={"Service Unavailable!"} /> : 
       <div className="dashboard-home">
       <h2>Dashboard Overview</h2>
       <div className="metrics-container">

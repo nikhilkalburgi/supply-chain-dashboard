@@ -28,6 +28,7 @@
 
 .dashboard-home .chart-item{
   width: 100%;
+  height: 300px;
 }
 .dashboard-home .last-section {
   display: flex;

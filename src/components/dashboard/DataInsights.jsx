@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from 'react';
 import ChartContainer from '../common/ChartContainer';
 import { useDashboardContext } from '../../context/DashboardContext';
@@ -5,6 +6,7 @@ import { Sidebar } from '../layout/Sidebar';
 import './DataInsights.css'; 
 import Loader from '../common/Loader';
 import PivotTable from '../common/DataTable';
+import ErrorMessage from '../common/Error';
 
 const DataInsights = () => {
   const defaultFilters = {
@@ -17,13 +19,32 @@ const DataInsights = () => {
 
   const [filters, setFilters] = useState(defaultFilters);
   const { state, dispatch } = useDashboardContext();
+  const [show, setShow] = useState(0);
 
   const updateFilters = (newFilters) => {
     setFilters(prev => ({ ...prev, ...newFilters }));
   };
 
   useEffect(() => {
+    if(show === 1) {
+      setShow(2)
+    }
+  }, [state])
+
+  const onChange = (isStart, value) => {
+    let temp = Array.from(filters.dateRange);
+    if(isStart) {
+      temp[0] = value;
+    } else {
+      temp[1] = value;
+    }
+    setFilters(prev => ({ ...prev, dateRange: temp }))
+  }
+
+  useEffect(() => {
     dispatch({ type: "FETCH_DATA", payload: filters });
+    if(show === 0)
+      setShow(1);
   }, [filters, dispatch]);
 
   // Prepare data for the bar chart (aggregated insights)
@@ -48,11 +69,11 @@ const DataInsights = () => {
 
   return (
     <>
-      {state.isLoading ? <Loader /> : state.error ? <>Error</> : 
+      {state.isLoading || show !== 2 ? <Loader /> : state.error ? <ErrorMessage message={'Service Unavailable!'} /> : 
       <div className="data-insights-page">
         <Sidebar
           AnomaliesFilters={null}
-          dataInsightsFilters={{onChange: updateFilters, startDate: filters.dateRange[0], endDate: filters.dateRange[1], region: filters.region, setSelectedRegion: (region) => updateFilters({ region }), amountRange: filters.amountRange, setAmountRange: (range) => updateFilters({ amountRange: range }), selectedDimension: filters.dimension, setSelectedDimension: (dimension) => updateFilters({ dimension })}}
+          dataInsightsFilters={{onChange, startDate: filters.dateRange[0], endDate: filters.dateRange[1], region: filters.region, setSelectedRegion: (region) => updateFilters({ region }), amountRange: filters.amountRange, setAmountRange: (range) => updateFilters({ amountRange: range }), selectedDimension: filters.dimension, setSelectedDimension: (dimension) => updateFilters({ dimension })}}
           DashboardHomeFilters={null}
         />
         <div className="data-insights-content">

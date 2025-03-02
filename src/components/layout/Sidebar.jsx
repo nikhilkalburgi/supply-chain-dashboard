@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 
 const AnomaliesFilters = ({onChange, startDate, endDate, region, setSelectedRegion, amountRange, setAmountRange, supplier, setSelectedSupplier}) => {
   const [min, setMin] = useState(amountRange.min);
   const [max, setMax] = useState(amountRange.max);
+  const [start, setStart] = useState(startDate);
+  const [end, setEnd] = useState(endDate);
+
+  useEffect(() => {
+    onChange( true, start)
+  }, [start])
+
+  useEffect(() => {
+    onChange( false, end)
+  }, [end])
 
   return <div className="anomaliesFilters">
     <div>
       <p>
         Date Range Start
       </p>
-      <input type='date' onChange={(e) => onChange(true, e.target.value)} value={startDate} />
+      <input type='date' onChange={(e) => setStart(e.target.value)} value={start} />
       <p>
         Date Range End
       </p>
-      <input type='date' onChange={(e) => onChange(false, e.target.value)} value={endDate} />
+      <input type='date' onChange={(e) => setEnd(e.target.value)} value={end} />
     </div>
     <div>
       <p>
@@ -73,17 +84,27 @@ const AnomaliesFilters = ({onChange, startDate, endDate, region, setSelectedRegi
 const DataInsightsFilters = ({onChange, startDate, endDate, region, setSelectedRegion, amountRange, setAmountRange, selectedDimension, setSelectedDimension}) => {
   const [min, setMin] = useState(amountRange.min);
   const [max, setMax] = useState(amountRange.max);
+  const [start, setStart] = useState(startDate);
+  const [end, setEnd] = useState(endDate);
+
+  useEffect(() => {
+    onChange(true, start)
+  }, [start])
+
+  useEffect(() => {
+    onChange(false, end)
+  }, [end])
 
   return <div className="dataInsightsFilters">
     <div>
       <p>
         Date Range Start
       </p>
-      <input type='date' onChange={(e) => onChange(true, e.target.value)} value={startDate} />
+      <input type='date' onChange={(e) => setStart(e.target.value)} value={start} />
       <p>
         Date Range End
       </p>
-      <input type='date' onChange={(e) => onChange(false, e.target.value)} value={endDate} />
+      <input type='date' onChange={(e) => setEnd(e.target.value)} value={end} />
     </div>
     <div>
       <p>
