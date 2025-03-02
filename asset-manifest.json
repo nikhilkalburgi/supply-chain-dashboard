@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/supply-chain-dashboard/static/css/main.65166f21.css",
-    "main.js": "/supply-chain-dashboard/static/js/main.9071997e.js",
+    "main.css": "/supply-chain-dashboard/static/css/main.1f7a3479.css",
+    "main.js": "/supply-chain-dashboard/static/js/main.c6df19f6.js",
+    "static/css/837.472501fc.chunk.css": "/supply-chain-dashboard/static/css/837.472501fc.chunk.css",
+    "static/js/837.bf96bfdb.chunk.js": "/supply-chain-dashboard/static/js/837.bf96bfdb.chunk.js",
+    "static/css/462.633f0e17.chunk.css": "/supply-chain-dashboard/static/css/462.633f0e17.chunk.css",
+    "static/js/462.90544dde.chunk.js": "/supply-chain-dashboard/static/js/462.90544dde.chunk.js",
+    "static/css/304.471c197e.chunk.css": "/supply-chain-dashboard/static/css/304.471c197e.chunk.css",
+    "static/js/304.e8c2df67.chunk.js": "/supply-chain-dashboard/static/js/304.e8c2df67.chunk.js",
+    "static/js/58.54db6915.chunk.js": "/supply-chain-dashboard/static/js/58.54db6915.chunk.js",
     "index.html": "/supply-chain-dashboard/index.html",
-    "main.65166f21.css.map": "/supply-chain-dashboard/static/css/main.65166f21.css.map",
-    "main.9071997e.js.map": "/supply-chain-dashboard/static/js/main.9071997e.js.map"
+    "main.1f7a3479.css.map": "/supply-chain-dashboard/static/css/main.1f7a3479.css.map",
+    "main.c6df19f6.js.map": "/supply-chain-dashboard/static/js/main.c6df19f6.js.map",
+    "837.472501fc.chunk.css.map": "/supply-chain-dashboard/static/css/837.472501fc.chunk.css.map",
+    "837.bf96bfdb.chunk.js.map": "/supply-chain-dashboard/static/js/837.bf96bfdb.chunk.js.map",
+    "462.633f0e17.chunk.css.map": "/supply-chain-dashboard/static/css/462.633f0e17.chunk.css.map",
+    "462.90544dde.chunk.js.map": "/supply-chain-dashboard/static/js/462.90544dde.chunk.js.map",
+    "304.471c197e.chunk.css.map": "/supply-chain-dashboard/static/css/304.471c197e.chunk.css.map",
+    "304.e8c2df67.chunk.js.map": "/supply-chain-dashboard/static/js/304.e8c2df67.chunk.js.map",
+    "58.54db6915.chunk.js.map": "/supply-chain-dashboard/static/js/58.54db6915.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.65166f21.css",
-    "static/js/main.9071997e.js"
+    "static/css/main.1f7a3479.css",
+    "static/js/main.c6df19f6.js"
   ]
 }
